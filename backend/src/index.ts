@@ -7,7 +7,12 @@ import authRoutes from './routes/auth'
 import cookieParser from 'cookie-parser'
 import path from 'path'
 
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string, {
+	autoIndex: false, // Don't build indexes
+	maxPoolSize: 10, // Maintain up to 10 socket connections
+	socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
+	family: 4, // Use IPv4, skip trying IPv6
+})
 
 const app = express()
 app.use(cookieParser())
@@ -29,6 +34,6 @@ app.get('*', (req: Request, res: Response) => {
 	res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'))
 })
 
-app.listen(5000, () => {
-	console.log('Server Running on localhost:5000')
+app.listen(process.env.PORT, () => {
+	console.log(`Server Running on localhost: ${process.env.PORT}`)
 })
