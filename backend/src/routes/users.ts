@@ -31,7 +31,6 @@ router.post(
 
 			user = new User(req.body)
 			await user.save()
-			console.log('User Saved')
 
 			const token = jwt.sign(
 				{ userId: user.id },
@@ -40,14 +39,12 @@ router.post(
 					expiresIn: '1d',
 				}
 			)
-			console.log('Token Created')
 
 			res.cookie('authToken', token, {
 				httpOnly: true,
 				secure: process.env.NODE_ENV === 'production',
 				maxAge: 86400000,
 			})
-			console.log('Cookies Saved')
 			return res.status(200).send({ message: 'User Registered OK' })
 		} catch (error) {
 			res.status(500).send({ message: 'Something went wrong', error })
