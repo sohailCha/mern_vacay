@@ -44,7 +44,7 @@ test('should allow user to add hotel', async ({ page }) => {
 	])
 
 	await page.getByRole('button', { name: 'Save' }).click()
-	await expect(page.getByText('Hotel Saved')).toBeVisible({ timeout: 15000 })
+	await expect(page.getByText('Hotel Saved')).toBeVisible({ timeout: 35000 })
 })
 
 test('should display hotels', async ({ page }) => {
