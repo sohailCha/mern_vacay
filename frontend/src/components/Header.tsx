@@ -27,11 +27,18 @@ const Header = () => {
 							<SignOutButton />
 						</>
 					) : (
-						<Link
-							to={'/sign-in'}
-							className='flex items-center text-blue-600 px-3 font-bold hover:bg-gray-100 hover:cursor-pointer bg-white'>
-							Sign In
-						</Link>
+						<>
+							<Link
+								to={'/sign-in'}
+								className='flex items-center text-blue-600 px-3 font-bold hover:bg-gray-100 hover:cursor-pointer bg-white'>
+								User Sign In
+							</Link>
+							<Link
+								to={'/hotel-sign-in'}
+								className='flex items-center text-blue-600 px-3 font-bold hover:bg-gray-100 hover:cursor-pointer bg-white'>
+								Hotel Sign In
+							</Link>
+						</>
 					)}
 				</span>
 			</div>
