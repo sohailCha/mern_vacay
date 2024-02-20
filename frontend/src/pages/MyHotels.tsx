@@ -18,21 +18,21 @@ const MyHotels = () => {
 	}
 
 	return (
-		<div className='space-y-5'>
-			<span className='flex justify-between px-4 xs:px-0'>
-				<h1 className='text-3xl font-bold'>My Hotels</h1>
+		<div className='space-y-5 px-4 xs:px-0'>
+			<span className='flex justify-between items-center'>
+				<h1 className='text-2xl xs:text-3xl font-bold'>My Hotels</h1>
 				<Link
 					to={'/add-hotel'}
-					className='flex bg-blue-600 text-white text-xl font-bold p-2 hover:bg-blue-500'>
+					className='flex bg-theme text-white text-md xs:text-lg font-bold p-2 hover:bg-theme'>
 					Add Hotel
 				</Link>
 			</span>
 			<div className='grid grid-cols-1 gap-8'>
 				{hotelData?.map((hotel) => (
 					<div className='flex flex-col justify-between border border-slate-300 rounded-lg p-8 gap-5'>
-						<h2 className='text-2xl font-bold'>{hotel.name}</h2>
+						<h2 className='text-xl xs:text-2xl font-bold'>{hotel.name}</h2>
 						<div className='whitespace-pre-line'>{hotel.description}</div>
-						<div className='grid grid-cols-5 gap-2'>
+						<div className='grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 2xl:grid-cols-5 gap-2'>
 							<div className='border border-slate-300 rounded-sm p-3 flex items-center'>
 								<BsMap className='mr-1' />
 								{hotel.city}, {hotel.country}
@@ -56,7 +56,7 @@ const MyHotels = () => {
 						<span className='flex justify-end'>
 							<Link
 								to={`/edit-hotel/${hotel._id}`}
-								className='flex bg-blue-600 text-white text-xl font-bold p-2 hover:bg-blue-500'>
+								className='flex bg-theme text-white text-md xs:text-lg font-bold p-2 hover:bg-theme'>
 								View Details
 							</Link>
 						</span>
