@@ -41,7 +41,7 @@ const Register = () => {
 
 	return (
 		<form
-			className='flex flex-col gap-5'
+			className='flex flex-col gap-5 px-4 xs:px-0'
 			onSubmit={onSubmit}>
 			<h2 className='text-3xl font-bold'>Create an Account</h2>
 			<div className='flex flex-col md:flex-row gap-5'>
@@ -117,7 +117,7 @@ const Register = () => {
 			<span>
 				<button
 					type='submit'
-					className='bg-blue-600 text-white p-2 font-bold hover:bg-blue-500 text-xl'>
+					className='bg-theme text-white p-2 font-bold hover:bg-theme/90 text-xl'>
 					Create Account
 				</button>
 			</span>

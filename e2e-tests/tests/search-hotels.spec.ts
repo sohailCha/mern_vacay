@@ -67,7 +67,7 @@ test('should book hotel', async ({ page }) => {
 	await stripeFrame.locator('[placeholder="ZIP"]').fill('24225')
 
 	await page.getByRole('button', { name: 'Confirm Booking' }).click()
-	await expect(page.getByText('Booking Saved!')).toBeVisible()
+	await expect(page.getByText('Booking Confirmed!')).toBeVisible()
 
 	await page.getByRole('link', { name: 'My Bookings' }).click()
 	await expect(page.getByText('Test Hotel')).toBeVisible()

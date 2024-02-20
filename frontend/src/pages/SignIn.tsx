@@ -37,7 +37,7 @@ const SignIn = () => {
 
 	return (
 		<form
-			className='flex flex-col gap-5'
+			className='flex flex-col gap-5 px-4 xs:px-0'
 			onSubmit={onSubmit}>
 			<h2 className='text-3xl font-bold'>Sign In</h2>
 			<label className='text-gray-700 text-sm font-bold flex-1'>
@@ -79,7 +79,7 @@ const SignIn = () => {
 				</span>
 				<button
 					type='submit'
-					className='bg-blue-600 text-white p-2 font-bold hover:bg-blue-500 text-xl'>
+					className='bg-theme text-white p-2 font-bold hover:bg-theme/90 text-xl'>
 					Log In
 				</button>
 			</span>
