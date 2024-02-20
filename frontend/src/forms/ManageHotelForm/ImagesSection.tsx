@@ -9,27 +9,26 @@ const ImagesSection = () => {
 		setValue,
 	} = useFormContext<HotelFormData>()
 
-	const existngImageUrls = watch('imageUrls')
+	const existingImageUrls = watch('imageUrls')
 
 	const handleDelete = (
 		event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
 		imageUrl: string
 	) => {
 		event.preventDefault()
-
 		setValue(
 			'imageUrls',
-			existngImageUrls.filter((url) => url !== imageUrl)
+			existingImageUrls.filter((url) => url !== imageUrl)
 		)
 	}
 
 	return (
-		<div>
+		<div className='px-4 xs:px-0'>
 			<h2 className='text-2xl font-bold mb-3'>Images</h2>
 			<div className='border rounded p-4 flex flex-col gap-4'>
-				{existngImageUrls && (
+				{existingImageUrls && (
 					<div className='grid grid-cols-6 gap-4'>
-						{existngImageUrls.map((url) => (
+						{existingImageUrls.map((url) => (
 							<div className='relative group'>
 								<img
 									src={url}
@@ -44,6 +43,7 @@ const ImagesSection = () => {
 						))}
 					</div>
 				)}
+
 				<input
 					type='file'
 					multiple
@@ -52,9 +52,10 @@ const ImagesSection = () => {
 					{...register('imageFiles', {
 						validate: (imageFiles) => {
 							const totalLength =
-								imageFiles.length + (existngImageUrls?.length || 0)
+								imageFiles.length + (existingImageUrls?.length || 0)
+
 							if (totalLength === 0) {
-								return 'Atleast one image should be added'
+								return 'At least one image should be added'
 							}
 
 							if (totalLength > 6) {

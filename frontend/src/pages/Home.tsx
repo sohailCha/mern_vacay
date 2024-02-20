@@ -10,9 +10,9 @@ const Home = () => {
 
 	return (
 		<div className='space-y-3'>
-			<h2 className='text-3xl font-bold'>Latest Destinations</h2>
-			<p>Most recent desinations added by our hosts</p>
-			<div className='grid gap-4'>
+			<h2 className='text-3xl font-bold pl-4 sm:pl-0'>Latest Destinations</h2>
+			<p className='pl-4 sm:pl-0'>Most recent desinations added by our hosts</p>
+			<div className='grid gap-4 p-4 sm:p-0'>
 				<div className='grid md:grid-cols-2 grid-cols-1 gap-4'>
 					{topRowHotels.map((hotel) => (
 						<LatestDestinationCard hotel={hotel} />

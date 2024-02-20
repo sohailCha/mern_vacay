@@ -19,7 +19,7 @@ const MyHotels = () => {
 
 	return (
 		<div className='space-y-5'>
-			<span className='flex justify-between'>
+			<span className='flex justify-between px-4 xs:px-0'>
 				<h1 className='text-3xl font-bold'>My Hotels</h1>
 				<Link
 					to={'/add-hotel'}
