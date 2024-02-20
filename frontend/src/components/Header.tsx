@@ -4,6 +4,7 @@ import SignOutButton from './SignOutButton'
 import { useState } from 'react'
 import { FaHotel } from 'react-icons/fa'
 import { MdHotel } from 'react-icons/md'
+import { PiSignInBold } from 'react-icons/pi'
 import { useMutation, useQueryClient } from 'react-query'
 import * as apiClient from '../api-client'
 
@@ -36,7 +37,7 @@ const Header = () => {
 	return (
 		<nav className='bg-theme py-6'>
 			<div className='container mx-auto flex justify-between'>
-				<span className='text-3xl text-white font-bold tracking-tight pl-4 xs:pl-0'>
+				<span className='text-2xl md:text-3xl text-white font-bold tracking-tight pl-4 xs:pl-0'>
 					<Link to={'/'}>Vacay.com</Link>
 				</span>
 				<span className='space-x-2 hidden lg:flex'>
@@ -125,8 +126,9 @@ const Header = () => {
 						) : (
 							<Link
 								to='/sign-in'
-								className='block p-4'
+								className='px-4 flex gap-2 py-2'
 								onClick={closeHamburgerMenu}>
+								<PiSignInBold className='flex items-center h-auto' />
 								Sign In
 							</Link>
 						)}

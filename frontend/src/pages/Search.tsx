@@ -102,16 +102,15 @@ const Search = () => {
 				</div>
 			</div>
 			<div className='flex flex-col gap-5'>
-				<div className='flex justify-between items-center'>
-					<span className='text-xl font-bold'>
+				<div className='flex justify-between flex-col-reverse xs:flex-row items-start xs:items-center'>
+					<span className='text-xl font-bold mt-4 xs:mt-0'>
 						{hotelData?.pagination.total} Hotels found{' '}
 						{search.destination ? `in ${search.destination}` : ''}
 					</span>
-					{/* Sort By */}
 					<select
 						value={sortOption}
 						onChange={(event) => setSortOption(event.target.value)}
-						className='p-2 border rounded-md'>
+						className='p-2 border rounded-md w-[100%] xs:w-auto'>
 						<option value={''}>Sort By</option>
 						<option value={'starRating'}>Star Rating</option>
 						<option value={'pricePerNightAsc'}>
@@ -122,6 +121,7 @@ const Search = () => {
 						</option>
 					</select>
 				</div>
+
 				{hotelData?.data.map((hotel) => (
 					<SearchResultCard hotel={hotel} />
 				))}

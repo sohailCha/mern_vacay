@@ -124,7 +124,7 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
 			<div className='space-y-2'>
 				<h2 className='text-xl font-semibold'>Your Price Summary</h2>
 
-				<div className='bg-blue-200 p-4 rounded-md'>
+				<div className='bg-theme/20 p-4 rounded-md'>
 					<div className='font-semibold text-lg'>
 						Total Cost: ${paymentIntent.totalCost.toFixed(2)}
 					</div>
@@ -144,7 +144,7 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
 				<button
 					disabled={isLoading}
 					type='submit'
-					className='bg-blue-600 text-white p-2 font-bold hover:bg-blue-500 text-md disabled:bg-gray-500'>
+					className='bg-theme text-white p-2 font-bold hover:bg-theme text-md disabled:bg-gray-500'>
 					{isLoading ? 'Saving...' : 'Confirm Booking'}
 				</button>
 			</div>
